@@ -34,7 +34,7 @@ public class LoadingDialog {
     }
 
     private void initDialog(){
-        mDialog = new Dialog(mContext);
+        mDialog = new Dialog(mContext,R.style.dialog);
         mDialog.setContentView(mDialogView);
         mDialog.setCanceledOnTouchOutside(true);
     }
