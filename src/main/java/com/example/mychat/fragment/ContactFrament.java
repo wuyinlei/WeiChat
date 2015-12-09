@@ -12,8 +12,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.mychat.R;
+import com.example.mychat.widget.LoadingDialog;
 
 /**
  * Created by Ivan on 14-9-23.
@@ -23,10 +25,13 @@ import com.example.mychat.R;
 
 
 public class ContactFrament extends Fragment {
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.contact_fragment,container,false);
+
         return view;
     }
 }

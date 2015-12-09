@@ -13,8 +13,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.mychat.R;
+import com.example.mychat.widget.LoadingDialog;
 
 /**
  * Created by Ivan on 14-8-12.
@@ -23,10 +25,21 @@ import com.example.mychat.R;
  */
 public class ChatListFrament extends Fragment {
 
+    private Button showDialog;
+    private LoadingDialog mDialog;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.chat_fragment,container,false);
+        showDialog = (Button) view.findViewById(R.id.showDialog);
+        showDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDialog = new LoadingDialog(getContext());
+                mDialog.setMessage("请稍等");
+                mDialog.show();
+            }
+        });
         return view;
     }
 }
