@@ -60,7 +60,6 @@
 
     <!-- 定义ActionBar 标签页 的样式 -->
     <style name="actionbar.tabs.style" parent="@style/Widget.AppCompat.ActionBar.TabView">
-
         <item name="android:background">@drawable/tab_indicator_ab_actionbar</item>
         <!-- Support library compatibility -->
         <item name="background">@drawable/tab_indicator_ab_actionbar</item>

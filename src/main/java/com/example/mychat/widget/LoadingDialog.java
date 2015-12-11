@@ -48,4 +48,10 @@ public class LoadingDialog {
         if (mDialog != null)
             mDialog.dismiss();
     }
+
+
+    public  boolean isShowing(){
+        return  mDialog.isShowing();
+    }
+
 }

@@ -7,21 +7,23 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.baidu.android.pushservice.PushConstants;
+import com.baidu.android.pushservice.PushManager;
 import com.example.mychat.R;
 import com.example.mychat.fragment.ChatListFrament;
 import com.example.mychat.fragment.ContactFrament;
 import com.example.mychat.fragment.MoreFragment;
 import com.example.mychat.util.TabUtils;
+import com.example.mychat.utils.ManifestUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeActivity extends AppCompatActivity implements ActionBar.TabListener, ViewPager.OnPageChangeListener {
+public class HomeActivity extends BaseActivity implements ActionBar.TabListener, ViewPager.OnPageChangeListener {
 
 
     private List<Tab> mTabs;
@@ -33,6 +35,8 @@ public class HomeActivity extends AppCompatActivity implements ActionBar.TabList
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        PushManager.startWork(getApplicationContext(),PushConstants.LOGIN_TYPE_API_KEY, ManifestUtil.getMetaValue(this,"bd_api_key"));
+
 
       /*  UmengUpdateAgent.setUpdateCheckConfig(false);
 
@@ -202,7 +206,6 @@ public class HomeActivity extends AppCompatActivity implements ActionBar.TabList
         public int getCount() {
             return mTabs.size();
         }
-
 
     }
 }
